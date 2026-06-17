@@ -1,0 +1,24 @@
+<h2>Status Pembayaran</h2>
+<h4>Periode: {{ period.name }}</h4>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nama Warga</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.resident }}</td>
+            <td>
+                {% if item.status %}
+                    Sudah bayar
+                {% else %}
+                    Belum bayar
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

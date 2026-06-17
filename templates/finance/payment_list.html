@@ -1,0 +1,22 @@
+<h2>Daftar Pembayaran Iuran</h2>
+<a href="{% url 'finance:create_payment' %}">Tambah Pembayaran</a>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Warga</th>
+            <th>Paket</th>
+            <th>Periode</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for payment in payments %}
+        <tr>
+            <td>{{ payment.resident }}</td>
+            <td>{{ payment.package.name }}</td>
+            <td>{{ payment.period.name }}</td>
+            <td>{{ payment.total_amount }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

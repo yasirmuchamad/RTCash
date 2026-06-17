@@ -1,0 +1,6 @@
+<h2>Pembayaran Iuran</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Bayar</button>
+</form>
