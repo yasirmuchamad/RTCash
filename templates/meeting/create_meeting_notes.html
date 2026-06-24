@@ -1,0 +1,21 @@
+<h2>Notulensi Pertemuan RT</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    <h3>Informasi Pertemuan</h3>
+    {{ meeting_form.as_p }}
+
+    <h3>Jalannya Acara</h3>
+    {{ note_form.as_p }}
+
+    <h3>Laporan Kas</h3>
+    {{ cash_form.as_p }}
+
+    <h3>Pembahasan</h3>
+    {{ discussion_formset.management_form }}
+    {% for form in discussion_formset %}
+    <div>
+        {{ form.as_p }}
+    </div>
+    {% endfor %}
+    <button type="submit">Simpan</button>
+</form>
