@@ -8,7 +8,9 @@
     {{ note_form.as_p }}
 
     <h3>Laporan Kas</h3>
-    {{ cash_form.as_p }}
+    <p>Saldo akhir saat ini: 
+        {{ cash_data.final_balance }}
+    </p>
 
     <h3>Pembahasan</h3>
     {{ discussion_formset.management_form }}

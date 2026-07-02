@@ -57,6 +57,11 @@ class MeetingCashReport(models.Model):
         on_delete=models.CASCADE,
         related_name='cash_reports'
         )
+    initial_balance = models.DecimalField(
+        max_digits=10,
+        decimal_places=0,
+        default=0
+    )
     income = models.DecimalField(
         max_digits=10, 
         decimal_places=0
